@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import { useEffect } from "react"
 import HomeUsers from "./HomeUsers"
@@ -6,9 +7,8 @@ const Users = (props) => {
     useEffect(() => {
         console.log(props)
         if (props.users.length === 0){
-            fetch("api/user")
-                .then(response => response.json())
-                .then(users => props.getUsers(users))
+            axios("api/user")
+                .then(users => props.getUsers(users.data))
         }
      }, []);
     

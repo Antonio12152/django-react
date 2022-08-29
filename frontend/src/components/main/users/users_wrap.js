@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from "react-redux"
 import Users from "./users"
-import getUsers from "../../../store/reducers/usersRed"
+import { getUsers } from "../../../store/reducers/usersRed"
 
 const mapStateToProps = (state) => {
     return {
